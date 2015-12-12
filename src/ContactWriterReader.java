@@ -13,9 +13,8 @@ public class ContactWriterReader {
 	public static void main(String[] args) throws IOException {
 		
 		File contacts = new File( "myContacts.txt" );
-		Contact [] myContacts;
-		myContacts = new Contact[25];
-		ContactTest test;
+		Contacts [] myContacts;
+		myContacts = new Contacts[25];
 		int numContacts = 0;
 		Scanner keyboard = new Scanner( System.in );
 		String info;
@@ -36,14 +35,45 @@ public class ContactWriterReader {
 		
 		if( contacts.exists() ) {
 			
-		
-		for( int ctr = 0; ctr < numContacts; ctr++ ) {
-			//printing out still
-		}
-		
+			reader = new BufferedReader( new FileReader(contacts) );
+			while( reader.ready() ) {
+			myContacts [numContacts] = new Contacts();
+			input = reader.readLine();
+			myContacts[numContacts].setLastName( input );
+			input = reader.readLine();
+			myContacts[numContacts].setFirstName( input );
+			input = reader.readLine();
+			myContacts[numContacts].setMiddleName( input );
+			input = reader.readLine();
+			myContacts[numContacts].setPrefix( input );
+			input = reader.readLine();
+			myContacts[numContacts].setPhoneNumber( input );
+			input = reader.readLine();
+			myContacts[numContacts].setEmail( input );
+			input = reader.readLine();
+			myContacts[numContacts].setStreet( input );
+			input = reader.readLine();
+			myContacts[numContacts].setCity( input );
+			input = reader.readLine();
+			myContacts[numContacts].setState( input );
+			input = reader.readLine();
+			myContacts[numContacts].setZip( input );
+			input = reader.readLine();
+			myContacts[numContacts].setOccupation( input );
+			input = reader.readLine();
+			
+			numContacts++;
+			
+			reader.close();
+				for( int ctr = 0; ctr < numContacts; ctr++ ) {
+					//printing out still
+				}
+			}
+			
 		} else {
 			do {
-				myContacts[numContacts] = new Contact();
+				myContacts[numContacts] = new Contacts();
+				
 				 //last name
 		        System.out.print( "Enter last name: " );
 		        input = keyboard.nextLine();
@@ -101,28 +131,11 @@ public class ContactWriterReader {
 		        
 		        System.out.print( "Do you want to enter another contact? (Y/N): ");
 		        input = keyboard.nextLine();
-			}
+			} while (input.equalsIgnoreCase("y"));
 			
 		}
 		
 		/*
-		 * choose filename and check to see if file exists
-		 * 
-		 * if( myFile.exists()) {
-		 * if file exists, read the contents into contact objects and display to user
-		 * 
-		 * SECOND PART
-		 * reader = new BufferedRearder( new FileReader(myFile) );
-		 * while( reader.ready() ) { checking to see if there is stuff to read from disk
-		 * myContacts[numContacts] = new Contact(); create new contact object
-		 * input = reader.readLine(); gets us a line from disk
-		 * myContacts[numContacts].setLastName( input );
-		 * input = reader.reaLine();
-		 * myContacts[numContacts].setFirstName( input );
-		 * 
-		 * numContacts++;
-		 * }
-		 * reader.close();
 		 * for( int ctr = 0; ctr < numContacts; ctr++ ) {
 		 * System.out.print( "Last name: " +myContacts[ctr].getLastName() );
 		 * System.out.print( "First name: " + myContacts[ctr].getFirstName() );
