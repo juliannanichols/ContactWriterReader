@@ -13,10 +13,8 @@ public class ContactWriterReader {
 	public static void main(String[] args) throws IOException {
 		
 		File contacts = new File( "myContacts.txt" ); //File reference 
-		PrintWriter write = new PrintWriter(contacts); //PrintWriter used to write to file
 		Scanner keyboard = new Scanner( System.in ); //Scanner object
 		Contacts [] myContacts = new Contacts[25];
-		BufferedReader reader = new BufferedReader( new FileReader(contacts) );
 		String input;
 		int numContacts = 0;
 		
@@ -26,7 +24,7 @@ public class ContactWriterReader {
 		 */
 
 		if( contacts.exists() ) {
-			
+			BufferedReader reader = new BufferedReader( new FileReader(contacts) );
 			while( reader.ready() ) {
 			myContacts [numContacts] = new Contacts();
 			
@@ -67,6 +65,7 @@ public class ContactWriterReader {
 							+ myContacts[ctr].getEmail() + "\nAddress: " + myContacts[ctr].getStreet()
 							+ "\n" + myContacts[ctr].getCity() + ", " + myContacts[ctr].getState() + " "
 							+ myContacts[ctr].getZip() + myContacts[ctr].getOccupation() );
+					contNum++;
 				}
 			}
 			
@@ -129,8 +128,11 @@ public class ContactWriterReader {
 			
 		}
 		
+		PrintWriter write = new PrintWriter(contacts); //PrintWriter used to write to file
+		
 		//writing information to file
 		for (int ctr = 0; ctr < numContacts; ctr++ ) {
+			
 			write.println( myContacts[ctr].getFirstName() );
 			write.println( myContacts[ctr].getMiddleName() );
 			write.println( myContacts[ctr].getLastName() );
