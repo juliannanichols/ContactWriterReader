@@ -54,20 +54,23 @@ public class ContactWriterReader {
 			
 			numContacts++;
 			
+			}
+			
 			reader.close(); //reader needs to be closed
 			
-				for( int ctr = 0; ctr < numContacts; ctr++ ) {
-					int contNum = 1;
-					System.out.print( "Contact number " + contNum + ":\nName: "
-							+ myContacts[ctr].getPrefix() + " " + myContacts[ctr].getFirstName() + " "
-							+ myContacts[ctr].getMiddleName() + " " + myContacts[ctr].getLastName()
-							+ "\nPhone Number: " + myContacts[ctr].getPhoneNumber() + "\nE-mail: "
-							+ myContacts[ctr].getEmail() + "\nAddress: " + myContacts[ctr].getStreet()
-							+ "\n" + myContacts[ctr].getCity() + ", " + myContacts[ctr].getState() + " "
-							+ myContacts[ctr].getZip() + myContacts[ctr].getOccupation() );
+			for( int ctr = 0; ctr < numContacts; ctr++ ) {
+				int contNum = 1;
+				System.out.print( "Contact number " + contNum + ":\nName: "
+					+ myContacts[ctr].getPrefix() + " " + myContacts[ctr].getFirstName() + " "
+					+ myContacts[ctr].getMiddleName() + " " + myContacts[ctr].getLastName()
+					+ "\nPhone Number: " + myContacts[ctr].getPhoneNumber() + "\nE-mail: "
+					+ myContacts[ctr].getEmail() + "\nAddress: " + myContacts[ctr].getStreet()
+					+ "\n" + myContacts[ctr].getCity() + ", " + myContacts[ctr].getState() + " "
+					+ myContacts[ctr].getZip() + "\nOccupation: " + myContacts[ctr].getOccupation() );
+				
 					contNum++;
 				}
-			}
+			
 			
 		} else {
 			
@@ -92,7 +95,7 @@ public class ContactWriterReader {
 		        input = keyboard.nextLine();
 		        myContacts[numContacts].setPrefix( input );
 		        //phone number
-		        System.out.print( "Enter phone number (### - ### - ####): " );
+		        System.out.print( "Enter phone number (###-###-####): " );
 		        input = keyboard.nextLine();
 		        myContacts[numContacts].setPhoneNumber( input );
 		        //e-mail address
@@ -133,9 +136,9 @@ public class ContactWriterReader {
 		//writing information to file
 		for (int ctr = 0; ctr < numContacts; ctr++ ) {
 			
+			write.println( myContacts[ctr].getLastName() );
 			write.println( myContacts[ctr].getFirstName() );
 			write.println( myContacts[ctr].getMiddleName() );
-			write.println( myContacts[ctr].getLastName() );
 			write.println( myContacts[ctr].getPrefix() );
 			write.println( myContacts[ctr].getPhoneNumber() );
 			write.println( myContacts[ctr].getEmail() );
