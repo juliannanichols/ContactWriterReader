@@ -14,7 +14,7 @@ public class ContactWriterReader {
 		
 		File contacts = new File( "myContacts.txt" ); //File reference 
 		Scanner keyboard = new Scanner( System.in ); //Scanner object
-		Contacts [] myContacts = new Contacts[25];
+		Contacts [] myContacts = new Contacts[2];
 		String input;
 		int numContacts = 0;
 		
