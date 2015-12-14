@@ -2,27 +2,28 @@ import java.io.*;
 import java.util.Scanner;
 
 /**
- * 
+ * This program will take a person's information, store it in a file, and then the information
+ * will be printed back to the user.
  * @author Julianna Nichols
  */
 public class ContactWriterReader {
 
 	/**
+	 * This is the main method for the ContactWriterReader program.
 	 * @param args
 	 */
 	public static void main(String[] args) throws IOException {
 		
 		File contacts = new File( "myContacts.txt" ); //File reference 
 		Scanner keyboard = new Scanner( System.in ); //Scanner object
-		Contacts [] myContacts = new Contacts[25];
-		String input;
-		int numContacts = 0;
+		Contacts [] myContacts = new Contacts[25]; //Creating array
+		String input; //taking user input
+		int numContacts = 0; //the number of contacts saved
 		
 		/* Loop to:
-		 * -read contact information (if part)
-		 * -create array of new contacts (else part)
+		 * -reads contact information (if part)
+		 * -creates array of new contact(s) (else part)
 		 */
-
 		if( contacts.exists() ) {
 			BufferedReader reader = new BufferedReader( new FileReader(contacts) );
 			while( reader.ready() ) {
@@ -53,7 +54,6 @@ public class ContactWriterReader {
 			input = reader.readLine();
 			
 			numContacts++;
-			
 			}
 			
 			reader.close(); //reader needs to be closed
@@ -76,7 +76,6 @@ public class ContactWriterReader {
 			
 			//getting all the contact information
 			do {
-				
 				myContacts[numContacts] = new Contacts();
 				
 				//last name
@@ -129,7 +128,6 @@ public class ContactWriterReader {
 		        numContacts++;
 		        
 			} while (input.equalsIgnoreCase("y"));
-			
 		}
 		
 		PrintWriter write = new PrintWriter(contacts); //PrintWriter used to write to file
@@ -152,5 +150,4 @@ public class ContactWriterReader {
 		
 		write.close(); //close PrintWriter	
 	}
-
 }

@@ -271,6 +271,7 @@ public class Contacts {
     	return occupation;
     }
     
+    //no touchy
     private String lName,fName, mName;
     private String prefix;
     private String phone;
