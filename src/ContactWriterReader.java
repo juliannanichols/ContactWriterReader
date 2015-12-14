@@ -76,6 +76,7 @@ public class ContactWriterReader {
 			
 			//getting all the contact information
 			do {
+				
 				myContacts[numContacts] = new Contacts();
 				
 				//last name
