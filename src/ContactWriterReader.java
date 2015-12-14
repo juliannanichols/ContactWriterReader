@@ -27,31 +27,31 @@ public class ContactWriterReader {
 		if( contacts.exists() ) {
 			BufferedReader reader = new BufferedReader( new FileReader(contacts) );
 			while( reader.ready() ) {
-			myContacts [numContacts] = new Contacts();
+				myContacts [numContacts] = new Contacts(); //new Contact object
 			
-			input = reader.readLine();
-			myContacts[numContacts].setLastName( input );
-			input = reader.readLine();
-			myContacts[numContacts].setFirstName( input );
-			input = reader.readLine();
-			myContacts[numContacts].setMiddleName( input );
-			input = reader.readLine();
-			myContacts[numContacts].setPrefix( input );
-			input = reader.readLine();
-			myContacts[numContacts].setPhoneNumber( input );
-			input = reader.readLine();
-			myContacts[numContacts].setEmail( input );
-			input = reader.readLine();
-			myContacts[numContacts].setStreet( input );
-			input = reader.readLine();
-			myContacts[numContacts].setCity( input );
-			input = reader.readLine();
-			myContacts[numContacts].setState( input );
-			input = reader.readLine();
-			myContacts[numContacts].setZip( input );
-			input = reader.readLine();
-			myContacts[numContacts].setOccupation( input );
-			input = reader.readLine();
+				input = reader.readLine();
+				myContacts[numContacts].setLastName( input );
+				input = reader.readLine();
+				myContacts[numContacts].setFirstName( input );
+				input = reader.readLine();
+				myContacts[numContacts].setMiddleName( input );
+				input = reader.readLine();
+				myContacts[numContacts].setPrefix( input );
+				input = reader.readLine();
+				myContacts[numContacts].setPhoneNumber( input );
+				input = reader.readLine();
+				myContacts[numContacts].setEmail( input );
+				input = reader.readLine();
+				myContacts[numContacts].setStreet( input );
+				input = reader.readLine();
+				myContacts[numContacts].setCity( input );
+				input = reader.readLine();
+				myContacts[numContacts].setState( input );
+				input = reader.readLine();
+				myContacts[numContacts].setZip( input );
+				input = reader.readLine();
+				myContacts[numContacts].setOccupation( input );
+				input = reader.readLine();
 			
 			numContacts++;
 			}
@@ -70,7 +70,6 @@ public class ContactWriterReader {
 				
 					contNum++;
 				}
-			
 			
 		} else {
 			
