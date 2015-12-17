@@ -16,7 +16,7 @@ public class ContactWriterReader {
 		
 		File contacts = new File( "myContacts.txt" ); //File reference 
 		Scanner keyboard = new Scanner( System.in ); //Scanner object
-		Contacts [] myContacts = new Contacts[25]; //Creating array
+		Contact [] myContacts = new Contact[25]; //Creating array
 		String input; //taking user input
 		int numContacts = 0; //the number of contacts saved
 		
@@ -27,7 +27,7 @@ public class ContactWriterReader {
 		if( contacts.exists() ) {
 			BufferedReader reader = new BufferedReader( new FileReader(contacts) );
 			while( reader.ready() ) {
-				myContacts [numContacts] = new Contacts(); //new Contact object
+				myContacts [numContacts] = new Contact(); //new Contact object
 			
 				input = reader.readLine();
 				myContacts[numContacts].setLastName( input );
@@ -75,7 +75,7 @@ public class ContactWriterReader {
 			
 			//getting all the contact information
 			do {
-				myContacts[numContacts] = new Contacts();
+				myContacts[numContacts] = new Contact();
 				
 				//last name
 		        System.out.print( "Enter last name: " );
